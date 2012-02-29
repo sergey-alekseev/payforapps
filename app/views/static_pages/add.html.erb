@@ -1,0 +1,24 @@
+<% provide :title, "Add app" %>
+<form>
+	<div>
+		<label>App Marketplace:</label>
+  	<select>
+ 		 <option value="splunk">Splunk</option>
+		</select>
+	</div>
+	<label>Splunk credentials:</label>
+  <input type="text" size="10" value="nkey" /><br>
+  <label>App ID:</label>
+  <input type="text" size="10" /><br>
+  <label>Price:</label>
+  <input type="text" size="2" /><br>
+	<div>
+		<p>Payments to accept: </p>
+  	<label>PO:</label>
+  	<input type="checkbox" value="PO" /><br>
+  	<label>Paypal:</label>
+  	<input type="checkbox" value="Paypal" /><br>
+  </div>
+ 	<input type="submit" value="Add" />
+  <a href="/">Back</a>
+</form>

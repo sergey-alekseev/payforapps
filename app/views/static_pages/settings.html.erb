@@ -1,0 +1,63 @@
+<% provide :title, "Admin settings" %>
+<h1>Admin Settings</h1>
+
+List of All Transactions(?)
+<table border="1" bordercolor="#FFCC00" style="background-color:#FFFFCC" width="90%" cellpadding="3" cellspacing="0">
+	<tr>
+		<td>Date</td>
+		<td>App ID</td>
+		<td>App Name</td>
+		<td>Price</td>
+		<td>Author</td>
+		<td>Buy Link</td>
+	</tr>
+	<tr>
+		<td>10:00:00 PM 3.3.2012</td>
+		<td>splunk_facebook</td>
+		<td>
+			<a href="http://splunk-base.splunk.com/apps/Splunk+for+Facebook">Splunk for Facebook</a>
+		</td>
+		<td>10</td>
+		<td>
+			<a href="http://splunk-base.splunk.com/users/nkey">nkey</a>
+		</td>
+		<td>
+			<form>
+			  <input type="text" size="20" value="/app/nkey/splunk-for-facebook" />
+			  <input type="submit" value="OK" />
+			</form>
+		</td>
+	</tr>
+	<tr>
+		<td>...</td>
+		<td>...</td>
+		<td>...</td>
+		<td>...</td>
+		<td>...</td>
+		<td>...</td>
+	</tr>
+</table>
+<form>
+	<label>Minimum Price that user can set:</label>
+  <input type="text" size="2" value="10" />
+  <input type="submit" value="OK" />
+</form>
+<form>
+	<label>Minimum balance to Withdraw:</label>
+  <input type="text" size="3" value="100" />
+  <input type="submit" value="OK" />
+</form>
+<form>
+	<label>Percentage To Charge:</label><br>
+	<label>Paypal:</label><br>
+	<label>%:</label>
+  <input type="text" size="2" value="10" />
+  <label>$:</label>
+  <input type="text" size="2" value="5" /><br>
+  <label>PO:</label><br>
+	<label>%:</label>
+  <input type="text" size="2" value="5" />
+  <label>$:</label>
+  <input type="text" size="2" value="5" />
+  <input type="submit" value="OK" />
+</form>

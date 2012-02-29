@@ -1,0 +1,26 @@
+<% provide :title, "Purchase order" %>
+<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
+
+	<h2>Set info for Purchase Order:(Static)</h2>
+
+  <div><label>Business name</label><br>
+  <input size="30" type="text"></div>
+  <div><label>Address</label><br>
+  <input size="30" type="text"></div>
+  <div><label>City</label><br>
+  <input size="30" type="text"></div>
+  <div><label>State</label><br>
+  <input size="30" type="text"></div>
+  <div><label>Zipcode</label><br>
+  <input size="10" type="text"></div>
+  <div><label>Country</label><br>
+  <input size="30" type="text"></div>
+  <div><label>Contact Phone</label><br>
+  <input size="30" type="text"></div>
+  <div><label>Contact Fax</label><br>
+  <input size="30" type="text"></div>
+  <div><label>Contact Email</label><br>
+  <input size="30" type="text" value="provided-before@gmail.com"></div>
+
+  <div><%= f.submit "Submit" %></div>
+<% end %>
