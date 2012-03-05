@@ -13,6 +13,7 @@ Payforapps::Application.routes.draw do
   match '/error', to: 'static_pages#error'
   match '/paypal',    to: 'static_pages#paypal'
   match '/purchaseorder',   to: 'static_pages#purchaseorder'
+  match '/posubmit',   to: 'static_pages#posubmit'
   match '/settings', to: 'static_pages#settings'
 	match '/buyitlink', to: 'static_pages#buyitlink'
 

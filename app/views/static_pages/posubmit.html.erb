@@ -1,0 +1,14 @@
+<% provide :title, "Purchase order submit" %>
+<h1 class="po_unique_id">Purchase Order PFA-1</h1>
+
+<div><label>Date: </label>10:00:00 PM 3/23/2012</div>
+<div><label>Charge: </label>100$</div>
+
+<h2>Submitted by</h2>
+<%= render 'po_output' %>
+
+<h2>Vendor information</h2>
+<%= render 'po_output' %>
+
+<button>Print</button>
+<button>Send by email</button>

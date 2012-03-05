@@ -27,6 +27,9 @@ class StaticPagesController < ApplicationController
   def purchaseorder
   end
 
+  def posubmit
+  end
+
   def settings
   end
 

@@ -1,7 +1,7 @@
 <% provide :title, "Admin settings" %>
 <h1>Admin Settings</h1>
 
-List of All Transactions(?)
+<h2>List of All Transactions</h2>
 <table border="1" bordercolor="#FFCC00" style="background-color:#FFFFCC" width="90%" cellpadding="3" cellspacing="0">
 	<tr>
 		<td>Date</td>
@@ -22,10 +22,7 @@ List of All Transactions(?)
 			<a href="http://splunk-base.splunk.com/users/nkey">nkey</a>
 		</td>
 		<td>
-			<form>
-			  <input type="text" size="20" value="/app/nkey/splunk-for-facebook" />
-			  <input type="submit" value="OK" />
-			</form>
+			/app/nkey/splunk-for-facebook
 		</td>
 	</tr>
 	<tr>
@@ -35,6 +32,30 @@ List of All Transactions(?)
 		<td>...</td>
 		<td>...</td>
 		<td>...</td>
+	</tr>
+</table>
+<h2>Buy link namespaces</h2>
+<table border="1" bordercolor="#FFCC00" style="background-color:#FFFFCC" width="90%" cellpadding="3" cellspacing="0">
+	<tr>
+		<td>App ID</td>
+		<td>App Name</td>
+		<td>Author</td>
+		<td>Buy Link</td>
+	</tr>
+	<tr>
+		<td>splunk_facebook</td>
+		<td>
+			<a href="http://splunk-base.splunk.com/apps/Splunk+for+Facebook">Splunk for Facebook</a>
+		</td>
+		<td>
+			<a href="http://splunk-base.splunk.com/users/nkey">nkey</a>
+		</td>
+		<td>
+			<form>
+			  <input type="text" size="20" value="/app/nkey/splunk-for-facebook" />
+			  <input type="submit" value="OK" />
+			</form>
+		</td>
 	</tr>
 </table>
 <form>

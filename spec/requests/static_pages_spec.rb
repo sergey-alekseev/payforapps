@@ -44,7 +44,7 @@ describe "Static pages" do
 
 			it { should have_selector('h2', text: 'Set info for Purchase Order') }
 
-			label_values=['Name', 'Address', 'City', 'State', 'Zipcode', 'Country', 'Phone', 'Fax']
+			label_values=['Business name', 'Address', 'City', 'State', 'Zip', 'Country','Contact Phone','Contact Fax']
 			label_values.each do |value|
 		  	it { should have_selector('label', text: value) }
 		  end
@@ -114,6 +114,33 @@ describe "Static pages" do
 
 		  let(:page_title) { 'Purchase order' }
 		  it_should_behave_like "all static pages"
+
+		  label_values=['Business name', 'Address', 'City', 'State', 'Zip', 'Country','Contact Phone','Contact Fax','Contact Email']
+			label_values.each do |value|
+		  	it { should have_selector('label', text: value) }
+		  end
+		end
+
+		describe "Purchase order submit page" do
+		  before { visit posubmit_path }
+
+		  let(:page_title) { 'Purchase order submit' }
+		  it_should_behave_like "all static pages"
+
+		  it { should have_selector('h1', class: 'po_unique_id') }
+
+		  h2_values=['Submitted by','Vendor information']
+		  h2_values.each do |value|
+		  	it { should have_selector('h2', text: value) }
+		  end
+
+			label_values=['Date','Charge','Business name', 'Address', 'City', 'State', 'Zip', 'Country','Contact Phone','Contact Fax','Contact Email']
+			label_values.each do |value|
+		  	it { should have_selector('label', text: value) }
+		  end
+
+		  it { should have_selector('button', text: 'Print') }
+ 		  it { should have_selector('button', text: 'Send by email') }
 		end
 
 		describe "Admin settings page" do

@@ -55,6 +55,11 @@ describe StaticPagesController do
 			it_should_behave_like "all valid actions"
 		end
 
+		describe "GET 'posubmit'" do
+			let(:action) { 'posubmit' }
+			it_should_behave_like "all valid actions"
+		end
+
 		describe "GET 'settings'" do
 			let(:action) { 'settings' }
 			it_should_behave_like "all valid actions"
@@ -111,6 +116,11 @@ describe StaticPagesController do
 
 		describe "GET 'purchaseorder'" do
 			let(:action) { 'purchaseorder' }
+			it_should_behave_like "all invalid actions"
+		end
+
+		describe "GET 'posubmit'" do
+			let(:action) { 'posubmit' }
 			it_should_behave_like "all invalid actions"
 		end
 

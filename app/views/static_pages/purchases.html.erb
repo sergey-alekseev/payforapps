@@ -1,7 +1,7 @@
 <% provide :title, "Purchases" %>
 <div>
 	<h2>Price</h2>
-	<strong>(?)</strong>Price and when it was changed - initial record shows here too
+	Price and when it was changed - initial record shows here too
 <table border="1" bordercolor="#FFCC00" style="background-color:#FFFFCC" width="90%" cellpadding="3" cellspacing="0">
 	<tr>
 		<td>Price</td>
@@ -10,7 +10,7 @@
 	</tr>
 	<tr>
 		<td>10</td>
-		<td>10:00:00 PM 3.3.2012</td>
+		<td>10:00:00 PM 3/23/2012</td>
 		<td>Splunk for Facebook</td>
 	</tr>
 	<tr>
@@ -29,31 +29,39 @@
 		<td>Charge Amount</td>
 		<td>Email</td>
 		<td>Authorized Users</td>
+		<td>Status</td>
+		<td>Errors</td>
 	</tr>
 	<tr>
 		<td>Paypal:</td>
 	</tr>
 	<tr>
-		<td>10:30:43 PM 3.3.2012</td>
-		<td>10:31:03 PM 3.3.2012</td>
+		<td>10:30:43 PM 3/3/2012</td>
+		<td>10:31:03 PM 3/3/2012</td>
 		<td>10</td>
 		<td>user1@gmail.com</td>
 		<td>user1</td>
+		<td>Completed</td>
+		<td></td>
 		<td><button>Provide access</button></td>
 	</tr>
 	<tr>
-		<td>11:30:43 PM 3.3.2012</td>
-		<td>11:31:03 PM 3.3.2012</td>
+		<td>11:30:43 PM 3/3/2012</td>
+		<td>11:31:03 PM 3/3/2012</td>
 		<td>20</td>
 		<td>user2@gmail.com</td>
 		<td>user2, user3</td>
+		<td>Completed</td>
+		<td></td>
 		<td><button>Provide access</button></td>
 	</tr>
 	<tr>
-		<td>12:30:43 PM 3.3.2012</td>
-		<td>12:31:03 PM 3.3.2012</td>
+		<td>12:30:43 PM 3/3/2012</td>
+		<td>12:31:03 PM 3/3/2012</td>
 		<td>10</td>
 		<td>erroruser@gmail.com</td>
+		<td></td>
+		<td><strong>Error</strong></td>
 		<td><strong>(!) error description</strong></td>
 		<td><button>Provide access</button></td>
 	</tr>
@@ -61,33 +69,40 @@
 		<td>PO:</td>
 	</tr>
 	<tr>
-		<td>10:30:43 PM 4.4.2012</td>
+		<td>10:30:43 PM 4/4/2012</td>
 		<td></td>
 		<td>10</td>
 		<td>user4@gmail.com</td>
+		<td></td>
 		<td><strong>Pending</strong></td>
+		<td></td>
 		<td><button>Provide access</button></td>
 		<td><button>Completed</button></td>
 	</tr>
 	<tr>
-		<td>11:30:43 PM 4.4.2012</td>
-		<td>11:31:03 PM 4.4.2012</td>
+		<td>11:30:43 PM 4/4/2012</td>
+		<td>11:31:03 PM 4/4/2012</td>
 		<td>20</td>
 		<td>user5@gmail.com</td>
 		<td>user5, user6</td>
+		<td>Completed</td>
+		<td></td>
 		<td><button>Provide access</button></td>
 		<td><button>Pending</button></td>
 	</tr>
 	<tr>
-		<td>11:30:43 PM 5.4.2012</td>
-		<td>11:31:03 PM 6.4.2012</td>
+		<td>11:30:43 PM 5/4/2012</td>
+		<td>11:31:03 PM 6/4/2012</td>
 		<td>10</td>
 		<td>user7@gmail.com</td>
 		<td>user7</td>
+		<td>Completed</td>
+		<td></td>
 		<td><button>Provide access</button></td>
 		<td><button>Pending</button></td>
 	</tr>
 </table>
+<br/><button>Refresh authorized users</button>
 </div>
 <div>
 	<h2>Balance</h2>
@@ -99,25 +114,25 @@
 		<td>Proceeds</td>
 	</tr>
 	<tr>
-		<td>10:31:03 PM 3.3.2012</td>
+		<td>10:31:03 PM 3/3/2012</td>
 		<td>10</td>
 		<td>5</td>
 		<td>5</td>
 	</tr>
 	<tr>
-		<td>11:31:03 PM 3.3.2012</td>
+		<td>11:31:03 PM 3/3/2012</td>
 		<td>20</td>
 		<td>5</td>
 		<td>15</td>
 	</tr>
 	<tr>
-		<td>11:31:03 PM 4.4.2012</td>
+		<td>11:31:03 PM 4/4/2012</td>
 		<td>20</td>
 		<td>5</td>
 		<td>15</td>
 	</tr>
 	<tr>
-		<td>11:31:03 PM 6.4.2012</td>
+		<td>11:31:03 PM 6/4/2012</td>
 		<td>10</td>
 		<td>5</td>
 		<td>5</td>

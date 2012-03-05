@@ -10,7 +10,7 @@
   <p><%= f.label :username %><br />
   <%= f.text_field :username %></p>
 
-  <div><%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
+  <div><%= f.label :password %><i>(leave blank if you don't want to change it)</i><br />
   <%= f.password_field :password, :autocomplete => "off" %></div>
 
   <div><%= f.label :password_confirmation %><br />
@@ -21,25 +21,18 @@
 
 	<h2>Set info for Purchase Order:(Static)</h2>
 
-  <div><label>Name</label><br>
-  <input size="30" type="text"></div>
-  <div><label>Address</label><br>
-  <input size="30" type="text"></div>
-  <div><label>City</label><br>
-  <input size="30" type="text"></div>
-  <div><label>State</label><br>
-  <input size="30" type="text"></div>
-  <div><label>Zipcode</label><br>
-  <input size="10" type="text"></div>
-  <div><label>Country</label><br>
-  <input size="30" type="text"></div>
-  <div><label>Phone</label><br>
-  <input size="30" type="text"></div>
-  <div><label>Fax</label><br>
-  <input size="30" type="text"></div>
+  <%= render 'po_input' %>
 
   <div><%= f.submit "Update" %></div>
 <% end %>
+	<br/>
+	<div>
+		<label>Date and Time Format:</label>
+  	<select>
+ 		 <option value="usa">USA</option>
+ 		 <option value="euro">Europe</option>
+		</select>
+	</div>
 
 <h3>Cancel my account</h3>
 
