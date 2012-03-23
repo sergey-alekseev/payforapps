@@ -6,7 +6,6 @@ gem 'jquery-rails'
 gem 'heroku'
 gem 'cancan'
 gem 'rails_admin', :git => 'git://github.com/sferik/rails_admin.git'
-gem 'therubyracer'
 
 group :development do
   gem "rspec-rails", ">= 2.8.1"
