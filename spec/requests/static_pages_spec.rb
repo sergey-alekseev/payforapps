@@ -68,7 +68,7 @@ describe "Static pages" do
 		  let(:page_title) { 'Add app' }
 		  it_should_behave_like "all static pages"
 
-		  label_values=['App Marketplace', 'Splunk credentials', 'App ID', 'Price', 'PO', 'Paypal']
+		  label_values=['App Marketplace', 'Username', 'Password', 'App ID', 'Price', 'PO', 'Paypal']
 			label_values.each do |value|
 		  	it { should have_selector('label', text: value) }
 		  end

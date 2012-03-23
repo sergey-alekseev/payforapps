@@ -1,7 +1,7 @@
 Payforapps::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb
 
-config.action_mailer.default_url_options = { :host => 'smooth-stream-5230.herokuapp.com' }
+config.action_mailer.default_url_options = { :host => 'payforapps.herokuapp.com' }
 # ActionMailer Config
 # Setup for production - deliveries, no errors raised
 config.action_mailer.delivery_method = :smtp
@@ -12,7 +12,7 @@ config.action_mailer.default :charset => "utf-8"
 config.action_mailer.smtp_settings = {
   address: "smtp.gmail.com",
   port: 587,
-  domain: "smooth-stream-5230.herokuapp.com",
+  domain: "payforapps.herokuapp.com",
   authentication: "plain",
   enable_starttls_auto: true,
   user_name: ENV["GMAIL_USERNAME"],

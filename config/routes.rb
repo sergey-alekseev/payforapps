@@ -1,7 +1,9 @@
 Payforapps::Application.routes.draw do
 
+  devise_for :admins # should be before mount RailsAdmin::Engine due to the way Rack::Mount works
+  mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
+
   devise_for :users, path_names: { sign_up: 'register', sign_in: 'login', sign_out: 'logout' }
-	resources :users, only: :show
 
   root :to => "static_pages#index"
 
