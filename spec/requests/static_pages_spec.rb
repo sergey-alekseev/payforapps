@@ -5,12 +5,13 @@ describe "Static pages" do
   subject { page }
 
 	describe "content" do
+    username = 'Test man'
 		before :all do
-			User.new(username: 'Test man', email: 'testing@man.net', password: 'secretpass', password_confirmation: 'secretpass').save!
+			User.new(username: username, email: 'testing@man.net', password: 'secretpass', password_confirmation: 'secretpass').save!
 		end
 
 		after :all do
-			User.find_by_username('Test man').destroy
+			User.find_by_username(username).destroy
 		end
 
 		before :each do
@@ -41,6 +42,8 @@ describe "Static pages" do
 
 		  let(:page_title) { 'Profile' }
 		  it_should_behave_like "all static pages"
+
+      it { should have_content "Hello, #{username}!" }
 
 			it { should have_selector('h2', text: 'Set info for Purchase Order') }
 

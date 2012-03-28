@@ -1,38 +1,39 @@
 <% provide :title, "Profile" %>
+<h2>Hello, <%= @user.username %>!</h2>
 <h2>Edit <%= resource_name.to_s.humanize %></h2>
 
 <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
-  <%= devise_error_messages! %>
+    <%= devise_error_messages! %>
 
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email %></div>
+    <div><%= f.label :email %><br />
+      <%= f.email_field :email %></div>
 
-  <p><%= f.label :username %><br />
-  <%= f.text_field :username %></p>
+    <p><%= f.label :username %><br />
+      <%= f.text_field :username %></p>
 
-  <div><%= f.label :password %><i>(leave blank if you don't want to change it)</i><br />
-  <%= f.password_field :password, :autocomplete => "off" %></div>
+    <div><%= f.label :password %><i>(leave blank if you don't want to change it)</i><br />
+      <%= f.password_field :password, :autocomplete => "off" %></div>
 
-  <div><%= f.label :password_confirmation %><br />
-  <%= f.password_field :password_confirmation %></div>
+    <div><%= f.label :password_confirmation %><br />
+      <%= f.password_field :password_confirmation %></div>
 
-  <div><%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-  <%= f.password_field :current_password %></div>
+    <div><%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
+      <%= f.password_field :current_password %></div>
 
-	<h2>Set info for Purchase Order:(Static)</h2>
+    <h2>Set info for Purchase Order:(Static)</h2>
 
-  <%= render 'po_input' %>
+    <%= render 'po_input' %>
 
-  <div><%= f.submit "Update" %></div>
+    <div><%= f.submit "Update" %></div>
 <% end %>
-	<br/>
-	<div>
-		<label>Date and Time Format:</label>
-  	<select>
- 		 <option value="usa">USA</option>
- 		 <option value="euro">Europe</option>
-		</select>
-	</div>
+<br/>
+<div>
+  <label>Date and Time Format:</label>
+  <select>
+    <option value="usa">USA</option>
+    <option value="euro">Europe</option>
+  </select>
+</div>
 
 <h3>Cancel my account</h3>
 

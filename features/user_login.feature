@@ -1,13 +1,19 @@
 Feature: User login
 
+  As an existing not logged in user
+  I want to login and see my dashboard and add app link
+  So that I try login as user
+
+  Background: first logout and then go to the login page
+    Given I go to the user logout page
+    And I go to the user login page
+
   Scenario: Unsuccessful user login
-    Given a user visits the login page
-    When he submits invalid login information
-    Then he should see an error message
+    When I submit invalid login information
+    Then I should see an error message containing "Invalid"
 
   Scenario: Successful user login
-    Given a user visits the login page
-      And the user has an account
-      And the user submits valid login information
-    Then he should see user dashboard
-      And he should see an add app link
+    Given I have the user account
+    And I submit valid login information
+    Then I should be on the user dashboard page
+    And I should see an add app link with text "Add App"

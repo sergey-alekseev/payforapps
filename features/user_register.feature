@@ -1,11 +1,16 @@
-Feature: Register
+Feature: User registration
+
+  As a new unregistered user
+  I want to register
+  So that I want to try
+
+  Background:
+    Given I am on the user register page
 
   Scenario: Unsuccessful register
-    Given a user visits the register page
-    When he submits invalid register information
-    Then he should see an error explanation
+    When I submit invalid register information
+    Then I should see an error explanation containing "error"
 
   Scenario: Successful register
-    Given a user visits the register page
-		When the user submits valid register information
-		Then he should see success notice
+    When I submit valid register information
+    Then I should see a notice message containing "success"

@@ -67,12 +67,10 @@ describe StaticPagesController do
 			it_should_behave_like "all valid actions"
 		end
 
-=begin
-		describe "GET 'settings'" do
+	  describe "GET 'settings'" do
 			let(:action) { 'settings' }
-			it_should_behave_like "all invalid actions"
+			it_should_behave_like "all valid actions"
 		end
-=end
 
 		describe "GET 'buyitlink'" do
 			let(:action) { 'buyitlink' }
@@ -138,12 +136,10 @@ describe StaticPagesController do
 			it_should_behave_like "all invalid actions"
 		end
 
-=begin
 		describe "GET 'buyitlink'" do
 			let(:action) { 'buyitlink' }
-			it_should_behave_like "all valid actions"
+			it_should_behave_like "all invalid actions"
 		end
-=end
   end
   
   # admin
@@ -198,19 +194,15 @@ describe StaticPagesController do
 			it_should_behave_like "all invalid actions"
 		end
 
-=begin
 		describe "GET 'settings'" do
 			let(:action) { 'settings' }
-			it_should_behave_like "all valid actions"
+			it_should_behave_like "all invalid actions"
 		end
-=end
 
-=begin
 		describe "GET 'buyitlink'" do
 			let(:action) { 'buyitlink' }
-			it_should_behave_like "all valid actions"
+			it_should_behave_like "all invalid actions"
 		end
-=end
   end
 
   describe "not signed in admin" do
