@@ -7,17 +7,20 @@ Payforapps::Application.routes.draw do
 
   root :to => "static_pages#index"
 
-  match '/profile',    to: 'static_pages#profile'
+  devise_scope :user do
+    get "profile", :to => "devise/registrations#edit"
+  end
+
   match '/dashboard',   to: 'static_pages#dashboard'
-  match '/add', to: 'static_pages#add'
-  match '/purchases',    to: 'static_pages#purchases'
-  match '/thankyou',   to: 'static_pages#thankyou'
-  match '/error', to: 'static_pages#error'
-  match '/paypal',    to: 'static_pages#paypal'
-  match '/purchaseorder',   to: 'static_pages#purchaseorder'
-  match '/posubmit',   to: 'static_pages#posubmit'
-  match '/settings', to: 'static_pages#settings'
-	match '/buyitlink', to: 'static_pages#buyitlink'
+  match '/add',         to: 'static_pages#add'
+  match '/purchases',   to: 'static_pages#purchases'
+  match '/thankyou',    to: 'static_pages#thankyou'
+  match '/error',       to: 'static_pages#error'
+  match '/paypal',      to: 'static_pages#paypal'
+  match '/purchaseorder', to: 'static_pages#purchaseorder'
+  match '/posubmit',    to: 'static_pages#posubmit'
+  match '/settings',    to: 'static_pages#settings'
+  match '/buyitlink',   to: 'static_pages#buyitlink'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -22,11 +22,6 @@ describe StaticPagesController do
 		  sign_in @user
 		end
 
-		describe "GET 'profile'" do
-		  let(:action) { 'profile' }
-			it_should_behave_like "all valid actions"
-		end
-
 		describe "GET 'dashboard'" do
 			let(:action) { 'dashboard' }
 			it_should_behave_like "all valid actions"

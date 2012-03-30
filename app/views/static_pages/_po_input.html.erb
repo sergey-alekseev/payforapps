@@ -1,16 +1,25 @@
-<div><label>Business name</label><br>
-  <input size="30" type="text"></div>
-<div><label>Address</label><br>
-  <input size="30" type="text"></div>
-<div><label>City</label><br>
-  <input size="30" type="text"></div>
-<div><label>State</label><br>
-  <input size="30" type="text"></div>
-<div><label>Zip code</label><br>
-  <input size="10" type="text"></div>
-<div><label>Country</label><br>
-  <input size="30" type="text"></div>
-<div><label>Contact Phone</label><br>
-  <input size="30" type="text"></div>
-<div><label>Contact Fax</label><br>
-  <input size="30" type="text"></div>
+<h2>Set info for Purchase Order:</h2>
+
+<div><%= f.label :name, "Business name" %><br />
+  <%= f.text_field :name %></div>
+
+<div><%= f.label :address, "Address" %><br />
+  <%= f.text_field :address %></div>
+
+<div><%= f.label :city, "City" %><br />
+  <%= f.text_field :city %></div>
+
+<div><%= f.label :state, "State" %><br />
+  <%= f.text_field :state %></div>
+
+<div><%= f.label :zipcode, "Zip code" %><br />
+  <%= f.text_field :zipcode %></div>
+
+<div><%= f.label :country, "Country" %><br />
+  <%= f.text_field :country %></div>
+
+<div><%= f.label :phone, "Contact Phone" %><br />
+  <%= f.text_field :phone %></div>
+
+<div><%= f.label :fax, "Contact Fax" %><br />
+  <%= f.text_field :fax %></div>

@@ -4,48 +4,50 @@ describe User do
 
   before(:each) do
     @attr = {
-      :username => "Example User",
-      :email => "user@example.com",
-      :password => "foobar",
-      :password_confirmation => "foobar"
+        :username => "Example User",
+        :email => "user@example.com",
+        :password => "foobar",
+        :password_confirmation => "foobar"
     }
   end
+
+  it { should respond_to(:po_info) }
 
   it "should create a new instance given a valid attribute" do
     User.create!(@attr)
   end
 
-  describe "usernames" do
+  describe "po info" do
+
+    #let(:user) { Factory(:user) }
+    #let(:po_info) { Factory(:po_info, po_infoable_id: user.id, po_infoable_type: 'User') }
+    before(:each) do
+      @user = Factory(:user)
+      @user.build_po_info
+      @po_info = @user.po_info
+    end
+
+    subject { @user }
+
+    it { should respond_to(:po_info) }
+    its(:po_info) { should == @po_info }
+
+    it "should destroy associated po info" do
+      @user.destroy
+      PoInfo.find_by_id(@po_info.id).should be_nil
+    end
+  end
+
+  describe "username" do
 
     before(:each) do
-      @user = User.new(@attr)
+      @user = Factory(:user)
     end
 
     it "should have a username attribute" do
       @user.should respond_to(:username)
     end
   end
-
-  describe "password validations" do
-
-    it "should require a password" do
-      User.new(@attr.merge(:password => "", :password_confirmation => "")).
-        should_not be_valid
-    end
-
-    it "should require a matching password confirmation" do
-      User.new(@attr.merge(:password_confirmation => "invalid")).
-        should_not be_valid
-    end
-
-    it "should reject short passwords" do
-      short = "a" * 5
-      hash = @attr.merge(:password => short, :password_confirmation => short)
-      User.new(hash).should_not be_valid
-    end
-
-  end
-
 
   describe "passwords" do
 
@@ -62,10 +64,30 @@ describe User do
     end
   end
 
+  describe "password validations" do
+
+    it "should require a password" do
+      User.new(@attr.merge(:password => "", :password_confirmation => "")).
+          should_not be_valid
+    end
+
+    it "should require a matching password confirmation" do
+      User.new(@attr.merge(:password_confirmation => "invalid")).
+          should_not be_valid
+    end
+
+    it "should reject short passwords" do
+      short = "a" * 5
+      hash = @attr.merge(:password => short, :password_confirmation => short)
+      User.new(hash).should_not be_valid
+    end
+
+  end
+
   describe "password encryption" do
 
     before(:each) do
-      @user = User.create!(@attr)
+      @user = Factory(:user)
     end
 
     it "should have an encrypted password attribute" do
@@ -83,7 +105,7 @@ describe User do
     no_email_user.should_not be_valid
   end
 
-	it "should require an username" do
+  it "should require an username" do
     no_username_user = User.new(@attr.merge(:username => ""))
     no_username_user.should_not be_valid
   end
@@ -104,7 +126,7 @@ describe User do
     end
   end
 
-	it "should reject duplicate email addresses" do
+  it "should reject duplicate email addresses" do
     User.create!(@attr)
     user_with_duplicate_email = User.new(@attr)
     user_with_duplicate_email.username = "othername"

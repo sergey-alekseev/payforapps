@@ -43,7 +43,7 @@ describe "Static pages" do
 		  let(:page_title) { 'Profile' }
 		  it_should_behave_like "all static pages"
 
-      it { should have_content "Hello, #{username}!" }
+      it { should have_content "#{username} profile" }
 
 			it { should have_selector('h2', text: 'Set info for Purchase Order') }
 
@@ -111,7 +111,7 @@ describe "Static pages" do
 		  let(:page_title) { 'Paypal' }
 		  it_should_behave_like "all static pages"
 		end
-
+=begin
 		describe "Purchase order page" do
 		  before { visit purchaseorder_path }
 
@@ -123,6 +123,7 @@ describe "Static pages" do
 		  	it { should have_selector('label', text: value) }
 		  end
 		end
+=end
 
 		describe "Purchase order submit page" do
 		  before { visit posubmit_path }

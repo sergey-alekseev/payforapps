@@ -87,7 +87,7 @@ end
 #
 When /^(?:|I )fill in the following:$/ do |fields|
   fields.rows_hash.each do |name, value|
-    When %{I fill in "#{name}" with "#{value}"}
+    step %{I fill in "#{name}" with "#{value}"}
   end
 end
 
@@ -151,11 +151,20 @@ Then /^the "([^"]*)" field(?: within (.*))? should contain "([^"]*)"$/ do |field
   with_scope(parent) do
     field = find_field(field)
     field_value = (field.tag_name == 'textarea') ? field.text : field.value
-    if field_value.respond_to? :should
-      field_value.should =~ /#{value}/
-    else
-      assert_match(/#{value}/, field_value)
+    if  field_value != nil
+      if field_value.respond_to? :should
+        field_value.should =~ /#{value}/
+      else
+        assert_match(/#{value}/, field_value)
+      end
     end
+  end
+end
+
+# Custom
+Then /^the following fields should contain appropriate values:$/ do |fields|
+  fields.rows_hash.each do |name, value|
+    step %{the "#{name}" field should contain "#{value}"}
   end
 end
 
@@ -235,7 +244,7 @@ Then /^the "([^"]*)" checkbox(?: within (.*))? should not be checked$/ do |label
     end
   end
 end
- 
+
 #Then /^(?:|I )should be on (.+)$/ do |page_name|
 #  current_path = URI.parse(current_url).path
 #  if current_path.respond_to? :should
@@ -258,8 +267,8 @@ Then /^(?:|I )should have the following query string:$/ do |expected_pairs|
   query = URI.parse(current_url).query
   actual_params = query ? CGI.parse(query) : {}
   expected_params = {}
-  expected_pairs.rows_hash.each_pair{|k,v| expected_params[k] = v.split(',')} 
-  
+  expected_pairs.rows_hash.each_pair{|k,v| expected_params[k] = v.split(',')}
+
   if actual_params.respond_to? :should
     actual_params.should == expected_params
   else

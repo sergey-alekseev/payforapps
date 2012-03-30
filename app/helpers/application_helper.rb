@@ -8,4 +8,11 @@ module ApplicationHelper
       "#{base_title} | #{page_title}"
     end
   end
+
+  # lazy build
+  def setup_user(user)
+    user.tap do |u|
+      u.build_po_info if u.po_info.nil?
+    end
+  end
 end

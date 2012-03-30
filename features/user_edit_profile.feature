@@ -4,10 +4,11 @@ Feature: Edit user's profile
   I want to edit my user profile
   So that I visit my profile page and edit my username and PO info
 
-  Background: pre populated fields
+  Background: pre-filled fields
+    Given I have the user account with valid po info
     When I login as user
     And I go to the profile page
-    Then all profile fields must be populated properly
+    Then all profile fields must be pre-filled properly
 
 
   Scenario: Unsuccessful edit
@@ -16,14 +17,7 @@ Feature: Edit user's profile
 
 
   Scenario: Successful edit
-    When I fill in the following:
-      | Email         | other@gmail.com |
-      | Username      | other_user      |
-      | Business name | John Other      |
-      | Address       | other@gmail.com |
-      | City          | other@gmail.com |
-      | State         | other@gmail.com |
-      | Zip code      | John Other      |
-      | Country       | other@gmail.com |
-      | Contact Phone | other@gmail.com |
-      | Contact Fax   | other@gmail.com |
+    When I fill in fields with new data
+    And submit changes with providing password
+    And go to the profile page
+    Then these fields should contain new data
